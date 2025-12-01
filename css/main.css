@@ -129,25 +129,6 @@ body {
   text-align: center;
   width: 100%;
 }
-.catalog__header .catalog__loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 2rem 0;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-.catalog__header .catalog__loader svg {
-  width: 22px;
-  height: 20px;
-}
 .catalog__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -167,6 +148,25 @@ body {
 .catalog__cards .catalog__card {
   max-width: 300px;
   width: 100%;
+}
+.catalog .catalog__loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 2rem 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.catalog .catalog__loader svg {
+  width: 22px;
+  height: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
