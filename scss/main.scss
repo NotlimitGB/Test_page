@@ -15,77 +15,72 @@ body {
 
   &__header {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; // позволяет фильтрам и поиску плавно переноситься
+    justify-content: space-between;
     gap: 1rem;
     margin-bottom: 2rem;
 
-    @media (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+    &__header__text {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .catalog__filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      flex: 1 1 300px; // минимальная ширина, растет по мере пространства
     }
 
     .catalog__search {
-      width: 100%;
+      flex: 1 1 200px; // инпут подстраивается под ширину
       max-width: 300px;
-      margin-top: 0.5rem;
 
       input {
         width: 100%;
         padding: 0.5rem 1rem;
         border: 1px solid #ccc;
         border-radius: 8px;
-        font-size: 14px;
+        font-size: clamp(12px, 1vw, 14px);
         outline: none;
         box-sizing: border-box;
       }
-
-      @media (min-width: 768px) {
-        margin-top: 0;
-      }
-    }
-    &__header__text {
-      text-align: center;
-      width: 100%;
     }
   }
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    justify-items: start;
-    @media (max-width: 900px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); // резиновый grid
+    gap: 1rem;
+    justify-items: center;
 
     .catalog__card {
-      max-width: 300px;
       width: 100%;
+      max-width: 300px;
     }
   }
-  .catalog__loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 2rem 0;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+}
+.catalog__loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 2rem 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 
-    svg {
-      width: 22px;
-      height: 20px;
-    }
+  svg {
+    width: 22px;
+    height: 20px;
   }
 }
