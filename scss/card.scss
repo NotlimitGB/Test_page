@@ -1,0 +1,64 @@
+.catalog__card {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__title {
+    font-size: clamp(16px, 1.2vw, 20px);
+    margin-bottom: 0.5rem;
+  }
+
+  &__category {
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 0.5rem;
+
+    .marketing & {
+      background-color: #f39c12;
+    }
+    .hr & {
+      background-color: #3498db;
+    }
+    .design & {
+      background-color: #9b59b6;
+    }
+    .management & {
+      background-color: #2ecc71;
+    }
+    .development & {
+      background-color: #e74c3c;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__price {
+    font-weight: bold;
+    color: red;
+  }
+
+  &__name {
+    color: #555;
+    display: block;
+    margin-left: 0.5rem;
+    border-left: 1px solid #ccc;
+    padding-left: 0.5rem;
+    opacity: 0.8;
+  }
+}
