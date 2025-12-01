@@ -35,7 +35,7 @@ const cardsData = [
     id: 5,
     description: "Graphic Design Basic",
     category: "design",
-    img: "assets/Design_1.png",
+    img: "assets/design_1.png",
     price: "$500",
     name: "by Guy Hawkins",
   },
